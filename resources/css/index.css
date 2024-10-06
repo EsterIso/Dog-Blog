@@ -8,34 +8,34 @@
     padding: 0;
 }
 
-body{
-    /* background-color: cornflowerblue; */
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 10%;
+    font-family: 'Comic Neue', sans-serif;
+    line-height: 1.6;
 }
 
 p {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     font-family: 'Comic Neue';
     line-height: 1.5;
 }
 
 h2 {
-    padding-bottom: 40px;
-    font-family: Chewy;
-    font-size: 30px;
+    padding-bottom: 20px;
+    font-family: Chewy, cursive;
+    font-size: 24px;
     color: cornflowerblue;
 }
 
-.banner{
+.banner {
     color: whitesmoke;
     background-color: cornflowerblue;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -47,15 +47,20 @@ h2 {
 }
 
 .banner h1 {
-    font-family: Chewy;
-    position: center;
+    font-family: Chewy, cursive;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .nav-buttons {
     display: flex;
     gap: 10px;
-    height: 40px;
+    height: auto;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .nav-button {
@@ -68,6 +73,7 @@ h2 {
     transition: background-color 0.3s, color 0.3s;
     border-radius: 10px;
     height: 40px;
+    font-size: 14px;
 }
 
 .nav-button:hover {
@@ -76,31 +82,32 @@ h2 {
 }
 
 .main-content {
-    height: 100vh;
+    height: auto;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    padding-top: 60px; /* Adjust based on your banner height */
-    width: 75%;
-    margin: auto auto;
+    padding-top: 120px; /* Adjust based on your banner height */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: whitesmoke;
 }
 
 section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
 }
 
 .slideshow-container {
     width: 100%;
     max-width: 800px;
-    height: 400px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .slideshow-image {
@@ -121,11 +128,10 @@ section {
 
 .hero {
     padding: 10px;
-
 }
 
 .blogs {
-    padding: 40px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,7 +151,7 @@ section {
 }
 
 .blog {
-    width: calc(50% - 10px); 
+    width: 100%;
     position: relative;
     margin: 0;
     padding: 20px;
@@ -159,44 +165,93 @@ section {
     overflow: hidden;
 }
 
-.blog-image{
+.blog-image {
     width: 100%;
     aspect-ratio: 1.5 / 1;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
 
-.blog-button{
+.blog-button {
     font-family: Chewy, cursive;
     background-color: transparent;
     color: whitesmoke;
     border-color: transparent;
     width: 100%;
-    font-size: 30px;
+    font-size: 24px;
     text-align: left;
+    padding: 10px 0;
 }
 
-.blog-button:hover{
+.blog-button:hover {
     color: black;
 }
 
-
-@media (max-width: 600px) {
-    .banner {
-        flex-direction: column;
-        align-items: center;
-    }
-    
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
     .banner h1 {
-        margin-right: 0;
-        margin-bottom: 10px;
+        width: auto;
+        margin-bottom: 0;
     }
-    
+
     .nav-buttons {
-        justify-content: center;
+        width: auto;
     }
 
     .blog {
-        width: 100%;
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 767px) {
+    .banner {
+        padding: 10px;
+    }
+
+    .nav-button {
+        font-size: 12px;
+        padding: 5px 10px;
+        height: 35px;
+    }
+
+    .main-content {
+        padding-top: 140px;
+    }
+
+    h2 {
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+
+    .slideshow-container {
+        height: 200px;
+    }
+
+    .blog-button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 20px;
+    }
+
+    .nav-button {
+        font-size: 11px;
+        padding: 3px 8px;
+        height: 30px;
+    }
+
+    .main-content {
+        padding-top: 160px;
+    }
+
+    .slideshow-container {
+        height: 250px;
+    }
+
+    p {
+        font-size: 14px;
     }
 }
